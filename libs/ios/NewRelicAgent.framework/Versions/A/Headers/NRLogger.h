@@ -52,7 +52,6 @@ typedef enum _NRLogLevels {
     NRLogLevelWarning = 1 << 1,
     NRLogLevelInfo    = 1 << 2,
     NRLogLevelVerbose = 1 << 3,
-    NRLogLevelAudit   = 1 << 4,
     NRLogLevelALL     = 0xffff
 } NRLogLevels;
 
@@ -128,11 +127,6 @@ withMessage:(NSString *)message;
  */
 + (void)clearLog;
 
-/*!
- return currently set logLevels
- */
-+ (NRLogLevels) logLevels;
-
 @end
 
 
@@ -143,7 +137,6 @@ withMessage:(NSString *)message;
 #define NRLOG_WARNING(format, ...) NRLOG(NRLogLevelWarning, format, ##__VA_ARGS__)
 #define NRLOG_INFO(format, ...) NRLOG(NRLogLevelInfo, format, ##__VA_ARGS__)
 #define NRLOG_VERBOSE(format, ...) NRLOG(NRLogLevelVerbose, format, ##__VA_ARGS__)
-#define NRLOG_AUDIT(format, ...) NRLOG(NRLogLevelAudit, format, ##__VA_ARGS__)
 
 #endif // _NEWRELIC_AGENT_LOGGING_
 
